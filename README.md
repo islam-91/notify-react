@@ -2,7 +2,8 @@
 
 A feature-rich, accessible, and highly customizable toast notification system for React applications. Supports multiple positions, variants, custom styling, and interactive features.
 
-![Untitled design](https://github.com/user-attachments/assets/d318699c-d7db-4d04-ac1a-d4adaf36ef56)
+<img src="https://github.com/user-attachments/assets/d318699c-d7db-4d04-ac1a-d4adaf36ef56" alt="Untitled design" height="300" />
+
 
 ## Features 🚀
 
