@@ -1,0 +1,145 @@
+.toast-message {
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: hidden;
+  min-width: 280px;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+  
+  /* Use enhanced open animation */
+  animation: toastOpenEnhanced 0.6s ease-out forwards;
+}
+
+/* Toast variant backgrounds with gradients */
+.toast-message-info {
+  background: linear-gradient(135deg, #2196f3, #21cbf3);
+}
+
+.toast-message-success {
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+}
+
+.toast-message-warning {
+  background: linear-gradient(135deg, #ff9800, #ffa726);
+}
+
+.toast-message-error {
+  background: linear-gradient(135deg, #f44336, #e53935);
+}
+
+/* When closing, override with the enhanced close animation */
+.toast-message.hide {
+  animation: toastCloseEnhanced 0.5s ease-in forwards;
+}
+
+/* Layout for content and close button */
+.toast-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toast-message-text {
+  flex: 1;
+  margin-right: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Close button enhancements */
+.toast-message-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 12px;
+  transition: color 0.3s ease;
+}
+
+.toast-message-close:hover {
+  color: #ddd;
+}
+
+.toast-icon {
+  flex-shrink: 0;
+}
+
+.toast-message-progress {
+  height: 8px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 8px 8px;
+  background-size: 200% 100%;
+  animation: progressBar linear forwards, shimmer 2s linear infinite;
+}
+
+/* Variant progress bar colors */
+.toast-message-info .toast-message-progress {
+  background: linear-gradient(90deg, #42a5f5, #1e88e5, #1976d2);
+}
+
+.toast-message-success .toast-message-progress {
+  background: linear-gradient(90deg, #66bb6a, #43a047, #388e3c);
+}
+
+.toast-message-warning .toast-message-progress {
+  background: linear-gradient(90deg, #ffa726, #fb8c00, #f57c00);
+}
+
+.toast-message-error .toast-message-progress {
+  background: linear-gradient(90deg, #ef5350, #e53935, #d32f2f);
+}
+
+/* Keyframes for the progress bar shrinking */
+@keyframes progressBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Keyframes for the shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Enhanced Open Animation: scales and bounces slightly into view */
+@keyframes toastOpenEnhanced {
+  0% {
+    opacity: 0;
+    transform: translateY(50%) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10%) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Enhanced Close Animation: fades out while gently sliding down and shrinking */
+@keyframes toastCloseEnhanced {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50%) scale(0.9);
+  }
+}
